@@ -1,0 +1,93 @@
+---
+layout: base.njk
+permalink: "/contribua/index.html"
+title: "Conte sua história"
+seoTitle: "Conte sua história · Blog Kauai Eventos"
+seoDescription: "Seu evento aconteceu no Kauai? Conte sua história e sugira temas para o nosso blog."
+---
+<div class="page-section" style="max-width:760px;">
+  <div class="form-box">
+    <div class="form-ornament">◆ &nbsp; ◆ &nbsp; ◆</div>
+    <h2 class="form-title">Seu evento aconteceu aqui.<br>Sua história <em>merece ser contada.</em></h2>
+    <p class="form-sub">As histórias mais especiais serão publicadas aqui no blog, com seu nome, suas fotos e a ficha técnica completa do seu dia.</p>
+    <div id="historia-form-block">
+      <form name="historias-kauai" data-netlify="true" netlify-honeypot="bot-field" onsubmit="enviarHistoria(event)" enctype="multipart/form-data">
+        <input type="hidden" name="form-name" value="historias-kauai">
+        <p style="display:none;"><input name="bot-field"></p>
+        <div class="f-grid">
+          <div class="f-field"><label class="f-label">Nome (casal / família)</label><input class="f-input" type="text" name="nome" placeholder="Ex: Maria & João" required></div>
+          <div class="f-field"><label class="f-label">WhatsApp</label><input class="f-input" type="tel" name="whatsapp" placeholder="(62) 99999-9999" required></div>
+        </div>
+        <div class="f-grid">
+          <div class="f-field"><label class="f-label">Tipo de evento</label><select class="f-input" name="tipo_evento"><option>Casamento</option><option>Festa de 15 Anos</option><option>Formatura</option><option>Outro</option></select></div>
+          <div class="f-field"><label class="f-label">Data exata do evento</label><input class="f-input" type="date" name="data_evento"></div>
+        </div>
+        <div class="f-field"><label class="f-label">Conta sua história 💚</label><textarea class="f-input" name="historia" rows="5" placeholder="Como foi? O que mais marcou? O que os convidados mais elogiaram?" required></textarea></div>
+        <div class="f-field"><label class="f-label">Suas fotos preferidas (opcional)</label>
+          <label class="f-upload" for="fotos-input"><div class="f-upload-icon">📷</div><div class="f-upload-text"><strong>Clique para selecionar fotos</strong><br>JPG ou PNG · Até 5 fotos · Máx. 10MB cada<br><span id="fotos-nome" style="color:#5a6e32;margin-top:4px;display:block;"></span></div></label>
+          <input type="file" id="fotos-input" name="fotos" accept="image/*" multiple style="display:none;" onchange="mostrarFotos(this)">
+        </div>
+        <button type="submit" class="f-btn">Enviar minha história →</button>
+      </form>
+    </div>
+    <div class="f-success" id="historia-success" style="display:none;"><div class="f-success-icon">💚</div><div class="f-success-title">Recebemos sua história!</div><div class="f-success-sub">Entraremos em contato para confirmar os detalhes e a publicação. Obrigada!</div></div>
+  </div>
+</div>
+
+<div class="page-section" style="max-width:760px;">
+  <div class="form-box">
+    <div class="form-ornament">◆ &nbsp; ◆ &nbsp; ◆</div>
+    <h2 class="form-title">O que você gostaria<br>de ler <em>aqui no blog?</em></h2>
+    <p class="form-sub" style="margin-bottom:24px;">Selecione os temas e deixe sua sugestão. Nosso blog é feito para você.</p>
+    <div class="sug-grid">
+      <div class="sug-card" onclick="selectSug(this,'💍 Dicas de casamento')"><div class="sug-icon">💍</div><div class="sug-title">Dicas de casamento</div><div class="sug-desc">Planejamento, fornecedores, tendências</div></div>
+      <div class="sug-card" onclick="selectSug(this,'🍽️ Gastronomia')"><div class="sug-icon">🍽️</div><div class="sug-title">Gastronomia</div><div class="sug-desc">Cardápios, tendências, harmonizações</div></div>
+      <div class="sug-card" onclick="selectSug(this,'🎀 Festa de 15 anos')"><div class="sug-icon">🎀</div><div class="sug-title">Festa de 15 anos</div><div class="sug-desc">Temas, decorações, entrada</div></div>
+      <div class="sug-card" onclick="selectSug(this,'📸 Fotografia')"><div class="sug-icon">📸</div><div class="sug-title">Fotografia</div><div class="sug-desc">Dicas para as melhores fotos</div></div>
+      <div class="sug-card" onclick="selectSug(this,'🌸 Decoração & flores')"><div class="sug-icon">🌸</div><div class="sug-title">Decoração & flores</div><div class="sug-desc">Inspirações e tendências</div></div>
+      <div class="sug-card" onclick="selectSug(this,'💡 Organização')"><div class="sug-icon">💡</div><div class="sug-title">Organização</div><div class="sug-desc">Planejamento inteligente</div></div>
+      <div class="sug-card" onclick="selectSug(this,'🥂 Histórias reais')"><div class="sug-icon">🥂</div><div class="sug-title">Histórias reais</div><div class="sug-desc">Casamentos que aconteceram aqui</div></div>
+      <div class="sug-card" onclick="selectSug(this,'🏛️ O espaço Kauai')"><div class="sug-icon">🏛️</div><div class="sug-title">O espaço Kauai</div><div class="sug-desc">Arquitetura e diferenciais</div></div>
+      <div class="sug-card" onclick="selectSug(this,'📅 Datas & antecedência')"><div class="sug-icon">📅</div><div class="sug-title">Datas & antecedência</div><div class="sug-desc">Quando e como reservar</div></div>
+    </div>
+    <div id="sug-form-block">
+      <form name="sugestoes-kauai" data-netlify="true" onsubmit="enviarSugestao(event)">
+        <input type="hidden" name="form-name" value="sugestoes-kauai">
+        <input type="hidden" name="temas_selecionados" id="temas-hidden" value="">
+        <div class="f-grid">
+          <div class="f-field"><label class="f-label">Seu nome (opcional)</label><input class="f-input" type="text" name="nome" placeholder="Como te chamar?"></div>
+          <div class="f-field"><label class="f-label">WhatsApp (opcional)</label><input class="f-input" type="tel" name="whatsapp" placeholder="(62) 99999-9999"></div>
+        </div>
+        <div class="f-field"><label class="f-label">Sugestão específica</label><textarea class="f-input" name="sugestao" rows="4" placeholder="Qualquer ideia é bem-vinda!"></textarea></div>
+        <button type="submit" class="f-btn">Enviar sugestão →</button>
+      </form>
+    </div>
+    <div class="f-success" id="sug-success" style="display:none;"><div class="f-success-icon">🌿</div><div class="f-success-title">Sugestão recebida!</div><div class="f-success-sub">Obrigada — sua opinião vai guiar nossos próximos conteúdos!</div></div>
+  </div>
+</div>
+
+<script>
+var selectedSugs=[];
+function selectSug(el,label){
+  el.classList.toggle('selected');
+  if(el.classList.contains('selected'))selectedSugs.push(label);
+  else selectedSugs=selectedSugs.filter(function(s){return s!==label;});
+  document.getElementById('temas-hidden').value=selectedSugs.join(', ');
+}
+function mostrarFotos(input){
+  var files=Array.from(input.files).map(function(f){return f.name;});
+  document.getElementById('fotos-nome').textContent=files.length>0?files.length+' foto(s): '+files.join(', '):'';
+}
+function enviarHistoria(e){
+  e.preventDefault();
+  var form=e.target;fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()}).catch(function(){});
+  document.getElementById('historia-form-block').style.display='none';
+  document.getElementById('historia-success').style.display='block';
+}
+function enviarSugestao(e){
+  e.preventDefault();
+  var form=e.target;fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()}).catch(function(){});
+  document.getElementById('sug-form-block').style.display='none';
+  document.getElementById('sug-success').style.display='block';
+}
+</script>
