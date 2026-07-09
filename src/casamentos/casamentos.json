@@ -1,0 +1,5 @@
+{
+  "layout": "casamento.njk",
+  "permalink": "/casamentos/{{ slug }}/index.html",
+  "tags": "casamentos"
+}

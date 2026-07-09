@@ -1,0 +1,47 @@
+---
+layout: base.njk
+permalink: "/index.html"
+title: "Blog Kauai Eventos"
+seoTitle: "Blog Kauai Eventos · Casamentos Reais, Dicas e Inspiração em Goiânia"
+seoDescription: "Blog do Kauai Eventos — casamentos reais em Goiânia, dicas de planejamento, buffet e inspirações para o evento mais importante da sua vida."
+---
+<div class="hero">
+  <h1 class="hero-title">Histórias, dicas <em>e</em> inspiração<br>para o seu momento único.</h1>
+  <p class="hero-sub">O blog do Kauai Eventos — casamentos reais, planejamento e tudo que você precisa para o dia mais importante da sua vida.</p>
+  <div class="hero-divider"><span>Kauai Eventos · Goiânia</span></div>
+</div>
+
+<div class="wrap" style="max-width:1000px;margin:0 auto;padding:40px 48px;" id="artigos">
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;margin-bottom:24px;">Artigos</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:28px;">
+    {% for post in collections.articles %}
+    <a href="{{ post.url }}" style="display:block;text-decoration:none;color:inherit;border:1px solid #ece6dc;border-radius:10px;overflow:hidden;transition:box-shadow .2s;">
+      {% if post.data.hero %}<img src="{{ post.data.hero }}" alt="{{ post.data.title }}" style="width:100%;height:180px;object-fit:cover;">{% endif %}
+      <div style="padding:18px 20px;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#5a6e32;margin-bottom:8px;">{{ post.data.category }}</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.3;color:#1a1a12;">{{ post.data.title }}</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="wrap" style="max-width:1000px;margin:0 auto;padding:20px 48px 60px;" id="casamentos">
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:32px;margin-bottom:8px;">Casamentos no Kauai</h2>
+  <p style="color:#8a8a6a;margin-bottom:24px;">Histórias reais. Momentos eternos.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:28px;">
+    {% for post in collections.casamentos %}
+    <a href="{{ post.url }}" style="display:block;text-decoration:none;color:inherit;border:1px solid #ece6dc;border-radius:10px;overflow:hidden;">
+      {% if post.data.hero %}<img src="{{ post.data.hero }}" alt="{{ post.data.title }}" style="width:100%;height:180px;object-fit:cover;">{% endif %}
+      <div style="padding:18px 20px;">
+        <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#5a6e32;margin-bottom:8px;">{{ post.data.category }}</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:#1a1a12;">{{ post.data.title | safe }}</div>
+        <div style="font-size:11px;color:#8a8a6a;margin-top:6px;">{{ post.data.meta }}</div>
+      </div>
+    </a>
+    {% endfor %}
+    <div style="border:1px dashed #ece6dc;border-radius:10px;padding:24px;display:flex;align-items:center;justify-content:center;text-align:center;color:#b0a880;font-size:13px;">
+      💍 Em breve...<br>Mais casamentos reais do Kauai chegando em breve.
+    </div>
+  </div>
+</div>

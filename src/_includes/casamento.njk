@@ -1,0 +1,26 @@
+---
+layout: base.njk
+---
+<div class="modal-article" style="position:static;max-width:900px;margin:110px auto 60px;padding:0 48px;">
+  <a href="/#casamentos" style="display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#6a6a50;margin-bottom:24px;">← Voltar aos casamentos</a>
+  {% if hero %}<img class="modal-hero-img" src="{{ hero }}" alt="{{ title }}" style="width:100%;border-radius:12px;margin-bottom:32px;aspect-ratio:16/9;object-fit:cover;">{% endif %}
+  <div class="modal-body">
+    <div class="modal-cat">{{ category }}</div>
+    <div class="modal-title" style="font-size:44px;">{{ title | safe }}</div>
+    <div class="modal-meta">{{ meta }}</div>
+    <div class="modal-text">
+      {{ content | safe }}
+    </div>
+    {% if gallery_images %}
+    <div class="wedding-modal-gallery" style="margin-top:24px;">
+      {% for img in gallery_images %}
+      <img class="{{ 'span-full' if loop.index0 % 3 == 0 else 'port' }}" src="{{ img.image }}" alt="{{ title }}" style="border-radius:10px;">
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div style="margin-top:40px;padding-top:28px;border-top:1px solid #ece6dc;text-align:center;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#1a1a12;margin-bottom:8px;">Quer realizar seu casamento no Kauai?</div>
+      <a href="https://wa.me/5562982420120?text=Ol%C3%A1%2C%20Kauai%21%20Vim%20pelo%20blog%20e%20quero%20saber%20mais%20sobre%20o%20espa%C3%A7o%20e%20o%20buffet." target="_blank" class="btn-primary">Falar no WhatsApp</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/images"
+public_folder: "/images"
+
+publish_mode: simple
+
+locale: "pt"
+
+collections:
+  - name: "articles"
+    label: "Artigos do Blog"
+    label_singular: "Artigo"
+    folder: "src/articles"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - label: "Categoria"
+        name: "category"
+        widget: "select"
+        options:
+          - "Dicas para Noivas"
+          - "Buffet & Gastronomia"
+          - "O Espaço"
+          - "Planejamento"
+          - "Festa de 15 Anos"
+          - "Decoração"
+          - "Eventos Corporativos"
+          - "Tendências"
+      - { label: "Legenda (embaixo do título)", name: "meta", widget: "string", default: "Kauai Eventos" }
+      - { label: "Foto de capa", name: "hero", widget: "image" }
+      - label: "Endereço da página (sem espaços/acentos, ex: dicas-para-noivas)"
+        name: "slug"
+        widget: "string"
+      - { label: "Conteúdo do artigo", name: "body", widget: "markdown" }
+
+  - name: "casamentos"
+    label: "Casamentos Reais"
+    label_singular: "Casamento"
+    folder: "src/casamentos"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Nome do casal (ex: Marcela & Rodrigo)", name: "title", widget: "string" }
+      - { label: "Categoria", name: "category", widget: "string", default: "Casamentos Reais · Goiânia" }
+      - { label: "Data e detalhes", name: "meta", widget: "string" }
+      - { label: "Foto de capa", name: "hero", widget: "image" }
+      - label: "Endereço da página (sem espaços/acentos, ex: joao-e-maria)"
+        name: "slug"
+        widget: "string"
+      - { label: "História do casal", name: "body", widget: "markdown" }
+      - label: "Galeria de fotos"
+        name: "gallery_images"
+        widget: "list"
+        field: { label: "Foto", name: "image", widget: "image" }
+        required: false
