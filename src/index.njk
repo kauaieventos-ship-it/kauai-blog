@@ -15,8 +15,8 @@ seoDescription: "Blog do Kauai Eventos — casamentos reais em Goiânia, dicas d
   <h2 class="section-heading">Artigos</h2>
   <div class="post-grid">
     {% for post in collections.articles %}
-    <a href="{{ post.url }}" class="post-card">
-      {% if post.data.hero %}<img src="{{ post.data.hero }}" alt="{{ post.data.title }}">{% endif %}
+    <a href="{{ post.url | url }}" class="post-card">
+      {% if post.data.hero %}<img src="{{ post.data.hero | url }}" alt="{{ post.data.title }}">{% endif %}
       <div class="post-card-body">
         <div class="post-card-cat">{{ post.data.category }}</div>
         <div class="post-card-title">{{ post.data.title }}</div>
@@ -31,8 +31,8 @@ seoDescription: "Blog do Kauai Eventos — casamentos reais em Goiânia, dicas d
   <p class="section-sub">Histórias reais. Momentos eternos.</p>
   <div class="post-grid">
     {% for post in collections.casamentos %}
-    <a href="{{ post.url }}" class="post-card">
-      {% if post.data.hero %}<img src="{{ post.data.hero }}" alt="{{ post.data.title }}">{% endif %}
+    <a href="{{ post.url | url }}" class="post-card">
+      {% if post.data.hero %}<img src="{{ post.data.hero | url }}" alt="{{ post.data.title }}">{% endif %}
       <div class="post-card-body">
         <div class="post-card-cat">{{ post.data.category }}</div>
         <div class="post-card-title">{{ post.data.title | safe }}</div>
@@ -45,5 +45,5 @@ seoDescription: "Blog do Kauai Eventos — casamentos reais em Goiânia, dicas d
 </div>
 
 <div class="page-section" style="text-align:center;padding-top:0;">
-  <a href="/contribua/" class="btn-outline" style="display:inline-block;">Seu evento aconteceu aqui? Conte sua história →</a>
+  <a href="{{ '/contribua/' | url }}" class="btn-outline" style="display:inline-block;">Seu evento aconteceu aqui? Conte sua história →</a>
 </div>
