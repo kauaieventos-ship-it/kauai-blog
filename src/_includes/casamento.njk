@@ -2,8 +2,8 @@
 layout: base.njk
 ---
 <div class="modal-article article-wrap">
-  <a href="/#casamentos" class="article-back">← Voltar aos casamentos</a>
-  {% if hero %}<img class="article-hero-img wedding-hero" src="{{ hero }}" alt="{{ title }}">{% endif %}
+  <a href="{{ '/' | url }}#casamentos" class="article-back">← Voltar aos casamentos</a>
+  {% if hero %}<img class="article-hero-img wedding-hero" src="{{ hero | url }}" alt="{{ title }}">{% endif %}
   <div class="modal-body">
     <div class="modal-cat">{{ category }}</div>
     <div class="modal-title wedding-name">{{ title | safe }}</div>
@@ -14,7 +14,7 @@ layout: base.njk
     {% if gallery_images %}
     <div class="wedding-modal-gallery">
       {% for img in gallery_images %}
-      <img class="{{ 'span-full' if loop.index0 % 3 == 0 else 'port' }}" src="{{ img.image }}" alt="{{ title }}">
+      <img class="{{ 'span-full' if loop.index0 % 3 == 0 else 'port' }}" src="{{ img.image | url }}" alt="{{ title }}">
       {% endfor %}
     </div>
     {% endif %}

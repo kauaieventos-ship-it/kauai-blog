@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{{ seoTitle or title }} · Blog Kauai Eventos</title>
 <meta name="description" content="{{ seoDescription or 'Blog do Kauai Eventos — casamentos reais em Goiânia, dicas de planejamento, buffet e inspirações.' }}">
-<link rel="canonical" href="https://kauaieventos.com/blog{{ page.url }}">
+<link rel="canonical" href="https://kauaieventos.com{{ page.url | url }}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{{ seoTitle or title }}">
 <meta property="og:description" content="{{ seoDescription or '' }}">
-{% if hero %}<meta property="og:image" content="https://kauaieventos.com/blog{{ hero }}">{% endif %}
-<link rel="stylesheet" href="/style.css">
+{% if hero %}<meta property="og:image" content="https://kauaieventos.com{{ hero | url }}">{% endif %}
+<link rel="stylesheet" href="{{ '/style.css' | url }}">
 </head>
 <body>
 <nav>
-  <a href="/" class="nav-logo-link"><img class="nav-logo" src="/images/nav-logo.png" alt="Kauai Eventos"> <span>Blog</span></a>
+  <a href="{{ '/' | url }}" class="nav-logo-link"><img class="nav-logo" src="{{ '/images/nav-logo.png' | url }}" alt="Kauai Eventos"> <span>Blog</span></a>
   <div class="nav-links">
-    <a href="/#artigos" class="nav-link">Artigos</a>
-    <a href="/#casamentos" class="nav-link">Casamentos Reais</a>
-    <a href="/contribua/" class="nav-link">Conte sua história</a>
+    <a href="{{ '/' | url }}#artigos" class="nav-link">Artigos</a>
+    <a href="{{ '/' | url }}#casamentos" class="nav-link">Casamentos Reais</a>
+    <a href="{{ '/contribua/' | url }}" class="nav-link">Conte sua história</a>
     <a href="https://wa.me/5562982420120?text=Ol%C3%A1%2C%20Kauai%21%20Vim%20pelo%20blog%20e%20quero%20saber%20mais%20sobre%20o%20espa%C3%A7o%20e%20o%20buffet." target="_blank" class="nav-cta">Falar no WhatsApp</a>
   </div>
 </nav>

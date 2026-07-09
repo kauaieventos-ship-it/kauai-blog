@@ -2,8 +2,8 @@
 layout: base.njk
 ---
 <div class="modal-article article-wrap">
-  <a href="/" class="article-back">← Voltar ao blog</a>
-  {% if hero %}<img class="article-hero-img" src="{{ hero }}" alt="{{ title }}">{% endif %}
+  <a href="{{ '/' | url }}" class="article-back">← Voltar ao blog</a>
+  {% if hero %}<img class="article-hero-img" src="{{ hero | url }}" alt="{{ title }}">{% endif %}
   <div class="modal-body">
     <div class="modal-cat">{{ category }}</div>
     <div class="modal-title">{{ title }}</div>
