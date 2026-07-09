@@ -7,8 +7,8 @@ a{text-decoration:none;color:inherit;}
 .container{max-width:860px;margin:0 auto;padding:0 48px;}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,248,244,0.96);backdrop-filter:blur(12px);border-bottom:1px solid #ece6dc;}
-.nav-logo{height:28px;width:auto;}
-.nav-logo-link{font-family:'Cormorant Garamond',serif;font-size:18px;color:#1a1a12;white-space:nowrap;}
+.nav-logo{height:28px;width:auto;vertical-align:middle;margin-right:8px;}
+.nav-logo-link{display:inline-flex;align-items:center;font-family:'Cormorant Garamond',serif;font-size:18px;color:#1a1a12;white-space:nowrap;}
 .nav-logo-link b{font-weight:600;}
 .nav-links{display:flex;gap:20px;align-items:center;}
 .nav-link{font-size:10px;letter-spacing:2px;color:#6a6a50;text-transform:uppercase;transition:color 0.2s;cursor:pointer;}
